@@ -1,0 +1,4 @@
+com\fabio\api\credit\controller\CreditControllerApplication.class
+com\fabio\api\credit\controller\integration\CreditProposalEngineIntegration.class
+com\fabio\api\credit\controller\service\CreditProposalEngineService.class
+com\fabio\api\credit\controller\resource\CreditControllerResource.class

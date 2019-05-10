@@ -1,0 +1,1 @@
+Microsserviço responsável por centralizar a comunicação com o cliente 'credit-web' e os outros microsserviços: 'credit-proposal-engine' e 'credit-analysis-engine'.
