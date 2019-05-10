@@ -6,7 +6,7 @@ Para a avaliação da proposta de crédito, escolhi a bibliotera Weka para infer
 
 Por fim, o front-end foi desenvolvido utilizando nodejs, angular, html e bootstrap.
 
-Obs: Não consegui finalizar o Front-end. Apenas tema a funcionalidade de cadastrar uma proposta. Para verificar as demais funcionalidades, usei o Postman. A seguir as urls:
+Obs: Não consegui finalizar o Front-end. Apenas existe a funcionalidade de cadastrar uma proposta. Para verificar as demais funcionalidades, usei o Postman. A seguir as urls:
 
 http://localhost:8090/api/credit-controller/processProposal
 Exemplo de JSON:
