@@ -1,0 +1,209 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "API para analisar e salvar propostas de crédito.",
+    "version" : "1.2.0",
+    "title" : "Credit-Calcard",
+    "termsOfService" : "",
+    "contact" : { }
+  },
+  "host" : "",
+  "basePath" : "",
+  "schemes" : [ "" ],
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "/api/credit-controller/" : { },
+    "/api/credit-controller/processProposal" : {
+      "post" : {
+        "summary" : "processProposal",
+        "parameters" : [ {
+          "name" : "proposal",
+          "in" : "query",
+          "required" : true,
+          "type" : "ProposalDTO"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/ProposalDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/credit-controller/findProposal/{cpf}" : {
+      "get" : {
+        "summary" : "findProposal",
+        "parameters" : [ {
+          "name" : "CPF",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/ProposalDTO"
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "cpf",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ]
+    },
+    "/api/credit-controller/getAllProposals" : {
+      "get" : {
+        "summary" : "getAllProposals",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/ProposalDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/credit-analysis-engine/" : { },
+    "/api/credit-analysis-engine/processAnalysis" : {
+      "post" : {
+        "summary" : "processAnalysis",
+        "parameters" : [ {
+          "name" : "proposal",
+          "in" : "query",
+          "required" : true,
+          "type" : "ProposalDTO"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/ProposalDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/credit-proposal-engine/" : { },
+    "/api/credit-proposal-engine/saveProposal" : {
+      "post" : {
+        "summary" : "saveProposal",
+        "parameters" : [ {
+          "name" : "proposal",
+          "in" : "query",
+          "required" : true,
+          "type" : "ProposalDTO"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    },
+    "/api/credit-proposal-engine/findProposal/{cpf}" : {
+      "get" : {
+        "summary" : "findProposal/{cpf}",
+        "parameters" : [ {
+          "name" : "CPF",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/ProposalDTO"
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "cpf",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ]
+    },
+    "/api/credit-proposal-engine/getAllProposals" : {
+      "get" : {
+        "summary" : "getAllProposals",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/ProposalDTO"
+            }
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "HTTP_BASIC" : {
+      "description" : "All GET methods are public, meaning that *you can read all the data*. Write operations require authentication and therefore are forbidden to the general public.",
+      "type" : "basic"
+    }
+  },
+  "definitions" : {
+    "ProposalDTO" : {
+      "type" : "object",
+      "required" : [ "age", "cpf", "gender", "income", "maritalStatus", "name", "numberOfDependents", "state" ],
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "description" : "O nome do cliente."
+        },
+        "cpf" : {
+          "type" : "string",
+          "description" : "O cpf do cliente."
+        },
+        "age" : {
+          "type" : "integer",
+          "description" : "A idade do cliente."
+        },
+        "gender" : {
+          "type" : "string",
+          "description" : "O sexo do cliente."
+        },
+        "maritalStatus" : {
+          "type" : "string",
+          "description" : "O estado civil do cliente."
+        },
+        "state" : {
+          "type" : "string",
+          "description" : "O estado em que o cliente mora."
+        },
+        "numberOfDependents" : {
+          "type" : "integer",
+          "description" : "O número de dependentes do cliente."
+        },
+        "income" : {
+          "type" : "number",
+          "description" : "A renda do cliente"
+        },
+        "resultProposal" : {
+          "type" : "string",
+          "description" : "O resultado da proposta: 'Aprovado' ou 'Negado'."
+        },
+        "limitProposal" : {
+          "type" : "string",
+          "description" : "O valor do crédito ou o motivo da não aprovação."
+        }
+      }
+    }
+  }
+}
