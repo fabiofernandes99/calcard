@@ -24,3 +24,7 @@ Exemplo de JSON:
 http://localhost:8090/api/credit-controller/getAllProposals
 
 http://localhost:8090/api/credit-controller/findProposal/123
+
+
+Para acessar via front-end:
+http://localhost:8082/#!/
