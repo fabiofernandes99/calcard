@@ -1,0 +1,1 @@
+Microsserviço responsável por analisar a proposta, definir se foi aprovada ou negada, assim como o valor de crédito ou o motivo da não aprovação.
