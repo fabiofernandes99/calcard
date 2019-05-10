@@ -1,0 +1,50 @@
+<form novalidate name="formProposal" class="row" ng-submit="submit()">
+    <div class="col-md-12">
+
+        <div class="form-group">
+            <label>Nome</label>
+            <input name="name" class="form-control" ng-model="customer.name" required>
+        </div>
+
+        <div class="form-group">
+            <label>CPF</label>
+            <input name="cpf" class="form-control" ng-model="customer.cpf" required>
+        </div>
+
+        <div class="form-group">
+            <label>Idade</label>
+            <input name="age" class="form-control" ng-model="customer.age" required>
+        </div>
+
+        <div class="form-group">
+            <label>Gênero</label>
+            <select name="gender" class="form-control" ng-model="customer.gender" ng-options="item.value as item.name for item in config.gender" required></select>
+        </div>
+
+        <div class="form-group ">
+            <label>Estado Civil</label>
+            <select name="maritalStatus" class="form-control" ng-model="customer.maritalStatus" ng-options="item.value as item.name for item in config.maritalStatus" required></select>
+        </div>
+
+        <div class="form-group ">
+            <label>Estado</label>
+            <select name="state" class="form-control" ng-model="customer.state" ng-options="item.value as item.name for item in config.state" required></select>
+        </div>
+
+        <div class="form-group ">
+            <label>Dependentes</label>
+            <input name="numberOfDependents" class="form-control " ng-model="customer.numberOfDependents" required>
+        </div>
+
+        <div class="form-group ">
+            <label>Renda</label>
+            <input name="income" class="form-control" ng-model="customer.income " required>
+        </div>
+
+        <button type="submit" class="btn btn-primary" ng-disabled="formProposal.$invalid ">
+            Salvar
+        </button>
+        <a href="/#!/proposal" class="btn btn-primary">Voltar</a>
+        <hr>
+    </div>
+</form>

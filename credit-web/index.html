@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calcard</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="node_modules/ng-dialog/css/ngDialog.min.css">
+    <link rel="stylesheet" href="node_modules/ng-dialog/css/ngDialog-theme-default.min.css">
+</head>
+
+<body class="container">
+	<h2>Propostas de crédito</h2>
+	<a href="/#!/proposal" class="btn btn-primary">Nova Proposta</a>
+	
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Nome</th>
+					<th>CPF</th>
+					<th>Idade</th>
+					<th>Sexo</th>
+					<th>Estado Civil</th>
+					<th>Estado</th>
+					<th>Dependentes</th>
+					<th>Renda</th>
+					<th>Valor crédito</th>
+					<th>Resulsado</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+	
+    <ng-view></ng-view>
+</body>
+
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/angular-animate/angular-animate.min.js"></script>
+<script src="node_modules/angular-route/angular-route.min.js"></script>
+<script src="node_modules/angular-resource/angular-resource.min.js"></script>
+<script src="node_modules/ng-dialog/js/ngDialog.min.js"></script>
+
+<script src="js/app.js"></script>
+<script src="js/controllers/ProposalController.js"></script>
+
+</html>
